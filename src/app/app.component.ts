@@ -12,7 +12,7 @@ import { ShowResultComponent } from "./models/show-result/show-result.component"
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'informatica-assignment';
+  title;
   fields;
   myform: FormGroup;
 
@@ -22,6 +22,7 @@ export class AppComponent {
         console.log(data)
         const controls = {};
         let fieldData = data[0];
+        this.title = data[0]['label'];
         let defaultData = data[1];
         this.fields = fieldData['field'];
         this.fields.forEach(res => {

@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-show-result',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './show-result.component.html',
   styleUrls: ['./show-result.component.scss']
 })

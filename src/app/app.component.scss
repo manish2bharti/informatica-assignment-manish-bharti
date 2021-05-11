@@ -1,24 +1,52 @@
+.appHeading{
+  text-align: center;
+    font-size: 20px;
+    margin: 10px 10px 0;
+}
 .formWrapper{
   width: 1000px;
-  /* float: left; */
-  margin: 0 auto;
+  margin: 10px auto;
+  background: #fff;
+  height: auto;
+  display: block;
+  float: left;
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
+  h3.formHeading{
+    margin: 10px;
+  }
   .fieldSection{
     width: 30%;
     float: left;
     margin: 10px;
-    height: 20px;
     .inputLabel{
-      width: 40%;
+      width: 100%;
       float: left;
+      color: #000;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
     }
     .inputField{
-      width: 60%;
+      width: 100%;
       float: left;
 
       input{
         width: 100%;
         float: left;
+        height: 36px;
+        background: #fff;
+        color: rgba(0, 0, 0, 0.8);
+        border-radius: 2px;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0;
+        font-size: 14px;
       }
     }
   }
@@ -27,5 +55,9 @@
     width: 100%;
     float: left;
     margin: 10px 0;
+  }
+
+  .formFooter{
+    margin: 10px;
   }
 }

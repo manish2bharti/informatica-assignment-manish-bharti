@@ -1,4 +1,6 @@
+<h3 class="appHeading">Manish Bharti - Assignment</h3>
 <form *ngIf="myform" [formGroup]="myform" (ngSubmit)="onSubmit()" novalidate class="formWrapper">
+  <h3 class="formHeading">{{title}}</h3>
   <div class="formBody">
     <ng-container *ngFor="let control of fields">
       <div class="fieldSection" *ngIf="!control.system">
@@ -38,6 +40,6 @@
     </ng-container>
   </div>
   <div class="formFooter">
-    <input type="submit" />
+    <input class="btn btn-primary" type="submit" />
   </div>
 </form>
