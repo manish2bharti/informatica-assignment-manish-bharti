@@ -1,0 +1,43 @@
+<form *ngIf="myform" [formGroup]="myform" (ngSubmit)="onSubmit()" novalidate class="formWrapper">
+  <div class="formBody">
+    <ng-container *ngFor="let control of fields">
+      <div class="fieldSection" *ngIf="!control.system">
+        <span class="inputLabel">{{control.label}} </span>
+        <span class="inputField" [ngSwitch]="true">
+          <input  *ngSwitchCase="this.control?.dataType == 'String'"
+            type="text"
+            placeholder="String"
+            [formControlName]="control.name"
+            (ngModelChange)="onchange($event, control.name)"
+          />
+
+          <input  *ngSwitchCase="this.control?.dataType == 'Decimal' || this.control?.dataType == 'Integer'"
+            type="number"
+            placeholder="Number"
+            [formControlName]="control.name"
+            (ngModelChange)="onchange($event, control.name)"
+          />
+
+          <input  *ngSwitchCase="this.control?.dataType == 'Date'"
+            type="date"
+            [formControlName]="control.name"
+            (ngModelChange)="onchange($event, control.name)"
+          />
+
+        </span>
+        <ng-container *ngFor="let validation of control.validations">
+          <span
+            *ngIf="myform.controls[control.name].touched && myform.controls[control.name].errors"
+          >
+            <p *ngIf="myform.controls[control.name].errors[validation.name]">
+              {{validation.message}}
+            </p>
+          </span>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+  <div class="formFooter">
+    <input type="submit" />
+  </div>
+</form>
